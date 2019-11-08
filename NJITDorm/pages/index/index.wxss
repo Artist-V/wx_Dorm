@@ -1,0 +1,174 @@
+/**index.wxss**/
+Page{
+  background-color: #f0e8e2;
+}
+
+.view_stu{
+  margin-top: 25%;
+
+}
+.view_stu button{
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;/*圆角弧度 */
+  box-shadow: 0rpx 0rpx  6rpx 1rpx #f7ae76;
+  border: none;
+  padding: 0;
+}
+.view_stu image{
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;/*圆角弧度 */
+}
+.view_tea{
+  margin-top: 15%;
+}
+.view_tea button{
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;/*圆角弧度 */
+  box-shadow: 0rpx 0rpx  6rpx 1rpx #f7ae76;
+  border: none;
+  padding: 0;
+}
+.view_tea image{
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 50%;/*圆角弧度 */
+}
+
+.view_text{
+  display: flex;
+  justify-content: center;
+  color: #c56d20;
+}
+
+/*
+.header {
+    margin: 90rpx 0 90rpx 50rpx;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+}
+ 
+.header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+ 
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+ 
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+ 
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}
+
+.carousel image{
+  width:100%;
+  height: 469rpx;
+
+}
+
+.class_view_carousel {
+  width: 100%;
+  height: 469rpx; 
+   这个是为了解决图片底部的一小段空白  
+  overflow: hidden;
+}
+ 
+.class_view_panel {
+  水平排列, 每行3个, wrap  
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+ 设置nav 50%  
+.class_nav {
+  width: 50%;
+  height: 230rpx;
+  
+   必须添加这个  
+  box-sizing: border-box;
+  
+   设置里面的image 和 text 垂直居中  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  /文字必须使用像素  
+  font-size: 16px;
+ 
+  / 边框必须使用 rpx  /
+  / 只给右 + 底边 添加边框  /
+  border-right: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+}
+
+/* 设置图片宽高  /
+/* 第1个 必须使用类名  /
+.class_nav image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.class_view_login {
+  padding: 10rpx 20rpx;
+  display: flex;
+}
+.class_view_login navigator {
+  width: 50%;
+  /* 让a 里面的 图片居中  /
+  display: flex;
+  justify-content: center;
+}
+ 
+/* 136px 88px  /
+.class_view_login navigator image{
+  width: 338rpx;
+  height: 188rpx;
+}
+
+/*分割线/
+.class_view_sperator {
+  width: 100%;
+  height: 10rpx;
+  background-color: rgb(233, 233, 233)
+}
+
+*/
+
+/*
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+*/

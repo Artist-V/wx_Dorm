@@ -1,0 +1,100 @@
+<!--pages/two/goback/goback.wxml-->
+
+<view class="view_Page">
+  <!--滚动公告-->
+  <view class='notice-wrap' hidden='{{HiddenNote}}'>
+　　<view class='tongzhitext'>
+　　　　<text class="tongzhi-text">{{text}}</text>
+　　</view>
+　  <view class="closeView" bindtap='switchNotice'>x</view>
+  </view>
+
+  <!--第二部分：导航栏-->
+  <view class="top_container">
+    <view class="nav_top">
+      <block wx:for="{{classify}}">
+        <view class="nav_top_items {{curNav==item.name?'active':''}}" bindtap="topTab" data-name="{{item.name}}">
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!--第三部分 表单-->
+  <view class="container" hidden="{{curNav != '离校返校'}}">
+    <form bindsubmit="bindSave" report-submit="true">
+    
+      <view class="form-box">
+        <!--姓名-->
+        <view class="row-wrap">
+          <view class="label">姓名</view>
+          <view class="label-right">
+            <input name="linkMan" class="input" type="text" placeholder="请输入姓名" value="{{addressData.linkMan}}{{wxaddress.userName}}"/>
+          </view>
+        </view>
+        
+        <!--手机号码-->
+        <view class="row-wrap">
+          <view class="label">手机号码</view>
+          <view class="label-right">
+            <input name="mobile" class="input" maxlength="11" type="number" placeholder="11位手机号码" value="{{addressData.mobile}}{{wxaddress.telNumber}}"/>
+          </view>
+        </view>
+
+        <!--选择宿舍号-->
+        <view class="row-wrap" bindtap="selectCity">
+          <view class="label">选择宿舍号</view>
+          <view class="label-right">
+            <input name="code" class="input" type="text" value="{{addressData.code}}{{wxaddress.postalCode}}"/>
+              <!--
+              <picker mode="multiSelector" range="{{pikerDorm}}" range-key="name" value="{{pickerSelect}}" bindchange="bindchange" bindcolumnchange="bindcolumnchange">
+                {{showDromStr}}
+              </picker>
+              -->
+          </view>
+        </view>
+
+        <!--请假理由-->
+        <view class="addr-details">
+          <view class="label">请假理由</view>
+          <view class="label-right">
+            <textarea name="address" auto-height placeholder="请输入请假理由"  value="{{addressData.address}}{{wxaddress.detailInfo}}"/>
+          </view>
+        </view>
+
+        <!--离校时间-->
+        <view class="row-wrap">
+          <view class="label">离校时间</view>
+          <view class="label-right">
+            <input name="code" class="input" type="text" value="{{addressData.code}}{{wxaddress.postalCode}}"/>
+          </view>
+        </view>
+
+        <!--返校时间-->
+        <view class="row-wrap">
+          <view class="label">返校时间</view>
+          <view class="label-right">
+            <input name="code" class="input" type="text" value="{{addressData.code}}{{wxaddress.postalCode}}"/>
+          </view>
+        </view>
+      </view>
+
+      <button type="warn" class="save-btn" formType="submit">提交</button>    
+    </form>
+  </view>
+
+
+  <!--历史记录-->
+  <view class="view_history" hidden="{{curNav != '历史记录'}}">
+    <view class='no-data' wx:if="{{!cashlogs}}">暂无历史记录~</view>
+      <view class='cashlogs' wx:if="{{cashlogs}}" wx:for-items="{{cashlogs}}" wx:key="{{index}}">
+        <view class='profile'>
+          <view class='typeStr'>{{ item.typeStr }}</view>
+          <view class='dateAdd'>{{ item.dateAdd }}</view>
+        </view>
+        <view class='amount' style="color: {{ (item.behavior == 0 ) ? 'red' : 'green' }}"> {{ (item.behavior ==0 ) ? '+' : '-' }} {{ item.amount }} 
+        </view>
+    </view>
+  </view>
+
+</view>

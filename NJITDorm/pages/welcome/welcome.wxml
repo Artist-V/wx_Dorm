@@ -1,0 +1,8 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <image class="avatar" src="/image/picture/宿舍平台.png"></image>
+  <text class="motto">NJIT智慧宿舍平台欢迎您!</text>
+  <view class="b-container">
+    <text catchtap="onInterface" class="b-text">进入界面</text>
+  </view>
+</view>

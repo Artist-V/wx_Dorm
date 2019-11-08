@@ -1,0 +1,110 @@
+<!--index.wxml-->
+
+<!--第一部分-->
+<view>
+  <!--学生-->
+  <view>
+    <view class="view_stu">
+      <button plain="true" bindtap="bindtap_stu">
+        <image src="/image/icon/学生.png"></image>
+      </button>
+    </view>
+    <text class="view_text">我是学生</text>
+  </view>
+  <!--宿管-->
+  <view>
+      <view class="view_tea">
+        <button plain="true" bindtap="bindtap_tea">
+          <image src="/image/icon/老师.png"></image>
+        </button>
+      </view>
+      <text class="view_text">我是宿管</text>
+  </view>
+</view>
+
+<!--第二部分-->
+<view>
+  <modal hidden="{{hidden_stu}}" title="请补充相关信息" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm_stu">
+    <input class="view_info" type="text" placeholder="张三" bindinput='setname' value='{{sname}}' />
+    <input class="view_info" type="number" placeholder="202160614" bindinput='setnum' value='{{snum}}' />
+    <view>
+      <!--mode选择器类型，多列选择器
+          bindchange:value改变时触发 change事件
+          bindcolumnchange:列改变时触发	
+          value:表示选择了 range 中的第几个
+      -->
+      <picker mode="multiSelector" bindchange="bindChange_stu" bindcolumnchange="bindColumnChange" value="{{stuIndex}}" range="{{stuArray}}">
+    <view class="picker">
+      当前选择：{{stuArray[0][stuIndex[0]]}}，{{stuArray[1][stuIndex[1]]}}，{{stuArray[2][stuIndex[2]]}}
+    </view>
+  </picker>
+    </view>
+  </modal>
+</view>
+
+<!--第三部分-->
+<view>
+  <modal hidden="{{hidden_tea}}" title="请补充相关信息" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm_tea">
+    <input class="view_info" type="text" placeholder="张三" bindinput='setname' value='{{sname}}' />
+    <input class="view_info" type="number" placeholder="80021" bindinput='setnum' value='{{snum}}' />
+    <view>
+      <picker mode="selector" bindchange="bindChange_tea" value="{{teaIndex}}" range="{{teaArray}}">
+    <view class="picker">
+      当前选择：{{teaArray[teaIndex]}}
+    </view>
+  </picker>
+    </view>
+  </modal>
+</view>
+
+<!--
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/image/picture/宿舍平台.png'></image>
+        </view>
+ 
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+ 
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+
+ 
+<view wx:else>
+   
+<view>
+  <view class="carousel">
+    <swiper indicator-dots='{{true}}' autoplay='{{true}}'>
+      <swiper-item>
+      <image src='/image/picture/pic1.jpg'></image>
+      </swiper-item>
+      <swiper-item>
+      <image src='/image/picture/pic2.jpg'></image>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+-->
+
+<!--
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+
+--!>

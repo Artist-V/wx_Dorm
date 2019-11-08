@@ -1,0 +1,56 @@
+<!--pages/two/board/board.wxml-->
+<view>
+  <!--滚动公告-->
+  <view class='notice-wrap' hidden='{{HiddenNote}}'>
+　　<view class='tongzhitext'>
+　　　　<text class="tongzhi-text">{{text}}</text>
+　　</view>
+　  <view class="closeView" bindtap='switchNotice'>x</view>
+  </view>
+
+  <!--top导航栏-->
+  <view class="top_container">
+      <text style="color:black;">今日：</text>
+      <text style="color:red;">{{date}}</text>
+    <view class="nav_top">
+      <block wx:for="{{classify}}">
+        <view class="nav_top_items {{curNav==item.name?'active':''}}" bindtap="topTab" data-name="{{item.name}}">
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <!--公告-->
+  <view class="nav_bottom">
+    <!--<block wx:if="{{classifyItems.length>0}}">
+      <block wx:for="{{classifyItems}}">-->
+        <view class="nav_bottom_items">
+          <!--公告栏表格-->
+          <view class="table">
+            <view class="tr bg-w">
+              <view class="th">宿舍号</view>
+              <view class="th">床位</view>
+              <view class="th">描述</view>
+            </view>
+          </view>
+          <block wx:for="{{listData}}">
+            <view class="tr bg-g" wx:if="{{index%2==0}}">
+              <view class="td">{{item.name}}</view>
+              <view class="td">{{item.number}}</view>
+              <view class="td">{{item.describe}}</view>              
+            </view>
+            <view wx:else class="tr">
+              <view class="td">{{item.name}}</view>
+              <view class="td">{{item.number}}</view>
+              <view class="td">{{item.describe}}</view>   
+            </view>
+          </block>
+        </view>
+      <!--</block>
+    </block>
+    <block wx:else class="data_text">
+      该公告暂无数据！
+    </block>-->
+  </view>
+</view>

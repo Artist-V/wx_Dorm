@@ -1,0 +1,46 @@
+/* pages/welcome/welcome.wxss */
+page{
+  background-color: #FAFAD2
+  /*下面空白区域不留白*/
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FAFAD2;
+}
+
+.avatar{
+  width: 420rpx;
+  height: 420rpx;
+  margin-top: 110rpx;
+}
+
+.motto{
+  margin-top: 80rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color:#9F4311;
+
+}
+
+.b-container{
+  margin-top: 220rpx;
+  border:2px solid #EA5A3C;
+  width: 300rpx;
+  height:80rpx;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.b-text{
+  font-size: 33rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color:#EA5A3C;
+}
+
+text{
+  font-family: Microsoft YaHei;
+}

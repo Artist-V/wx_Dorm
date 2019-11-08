@@ -1,0 +1,18 @@
+<!--pages/two/check/check.wxml-->
+<view>
+  <!--滚动公告-->
+  <view class='notice-wrap' hidden='{{HiddenNote}}'>
+　　<view class='tongzhitext'>
+　　　　<text class="tongzhi-text">{{text}}</text>
+　　</view>
+　  <view class="closeView" bindtap='switchNotice'>x</view>
+  </view>
+
+  <!--签到-->
+  <view>
+    <text></text>
+    <button type="primary">签到</button>
+  </view>
+
+
+</view>
